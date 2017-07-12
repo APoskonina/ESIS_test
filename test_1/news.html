@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.101.107/" />
+<title>news</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">news</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/esis/PAOportal_v622.nsf/WebPortal6/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>06.07.2017</td>
+	<td>date</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>7</td>
+	<td>news</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>новая новость без обрезания текста</td>
+	<td>title</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.h3</td>
+	<td>НОВОСТИ</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#typeContent</td>
+	<td>Новости</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#calendarNews</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#calendarNews</td>
+	<td>${date}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=label[for='customRadio3']/span[contains(text(),'Месяц')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#newsRegions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=МР Поволжье-СЗ</td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=МР Юг</td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=Тестирование</td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=Центр</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#menuNews &gt; div.panelline &gt; div.panelbtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#menuNews &gt; div.panelline &gt; div.panelbtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div#newsList</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertCssCount</td>
+	<td>css=div#newsList&gt;table.data-block&gt;tbody&gt;tr</td>
+	<td>${news}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//table[@class='data-block']/tbody</td>
+	<td>*${title}*</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[contains( text(),'http://mail.ru')]</td>
+	<td>$[KEY_PGDN]</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[contains( text(),'http://mail.ru')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[contains( text(),'http://mail.ru')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectPopUp</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//table</td>
+	<td>$[KEY_PGDN]</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//table</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[@href='http://192.168.101.107/esis/PAOportal_v622.nsf/AllDocuments/5B6E45BE211EE5E94325810F004586BC?OpenDocument']</td>
+	<td>$[KEY_PGDN]</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[@href='http://192.168.101.107/esis/PAOportal_v622.nsf/AllDocuments/5B6E45BE211EE5E94325810F004586BC?OpenDocument']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//a[@href='http://192.168.101.107/esis/PAOportal_v622.nsf/AllDocuments/5B6E45BE211EE5E94325810F004586BC?OpenDocument']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@id='doc_rating']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//a[contains( text(),'новость 14 с разноцветным тестом и ссылками')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//font[@face='Symbol']</td>
+	<td>$[KEY_PGDN]</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>//table[@class='data-block']/tbody/tr[1]//font[@face='Symbol']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#hideRightBar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#hideRightBar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li#rightNewsSch&gt;a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li#rightNewsSch&gt;a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[contains( text(),'новость без обрезания текста')]</td>
+	<td>*${title}*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains( text(),'новость без обрезания текста')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=div#dlgNews div.dlgHeader div.dlgTitle</td>
+	<td>titler</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${titler}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div#dlgNews div.dlgTitle</td>
+	<td>${title}</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div#dlgNews div.panel img</td>
+	<td>\34</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#dlgNews div.panel img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div#dlgNews div.panel table</td>
+	<td>\34</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#dlgNews div.panel table</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div#dlgNews div.panel a[href='http://mail.ru']</td>
+	<td>\34</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#dlgNews div.panel a[href='http://mail.ru']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>css=div#dlgNews div.panel a[href='http://192.168.101.107/esis/PAOportal_v622.nsf/AllDocuments/5B6E45BE211EE5E94325810F004586BC?OpenDocument']</td>
+	<td>\34</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#dlgNews div.panel a[href='http://192.168.101.107/esis/PAOportal_v622.nsf/AllDocuments/5B6E45BE211EE5E94325810F004586BC?OpenDocument']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div#dlgNews div.panel font[face='Symbol']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dialogWin div.dlgCloseBtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertCssCount</td>
+	<td>css=div.rightMenu&gt;ul&gt;li#rightNewsSch&gt;ul#rightNewsLinks&gt;li</td>
+	<td>${news}</td>
+</tr>
+</tbody></table>
+</body>
+</html>

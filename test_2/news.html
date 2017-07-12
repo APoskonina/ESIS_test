@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.101.107/" />
+<title>news</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">news</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/esis/PAOportal_v622.nsf/WebPortal6/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>01.05.2017</td>
+	<td>date</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>проверкаметки</td>
+	<td>title</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Развернуть</td>
+	<td>deploy</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Скрыть</td>
+	<td>hide</td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=div.h3</td>
+	<td>НОВОСТИ</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#typeContent</td>
+	<td>Новости</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#calendarNews</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#calendarNews</td>
+	<td>${date}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=label[for='customRadio3']/span[contains(text(),'Месяц')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#newsRegions</td>
+	<td></td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=МР Поволжье-СЗ</td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=МР Юг</td>
+</tr>
+<tr>
+	<td>addSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=Тестирование</td>
+</tr>
+<tr>
+	<td>removeSelection</td>
+	<td>css=#selRegion</td>
+	<td>label=Центр</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#menuNews &gt; div.panelline &gt; div.panelbtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#menuNews &gt; div.panelline &gt; div.panelbtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div#newsList</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/</td>
+	<td>*${title}*</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]/div[2]</td>
+	<td>*${deploy}*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[contains(text(),'${title}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]</td>
+	<td>*${hide}*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]//span[contains(text(),'${hide}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]</td>
+	<td>*${deploy}*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]//span[contains(text(),'${deploy}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/tr[1]/td[3]</td>
+	<td>*${hide}*</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[contains(text(),'Развернуть все')]</td>
+	<td>Развернуть все</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Развернуть все')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/</td>
+	<td>*${deploy}*</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[contains(text(),'Скрыть все')]</td>
+	<td>Скрыть все</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains(text(),'Скрыть все')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotText</td>
+	<td>//div[@id='testContent']/div[2]/table/tbody/</td>
+	<td>*${hide}*</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=div#hideRightBar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#hideRightBar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li#rightNewsSch&gt;a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li#rightNewsSch&gt;a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//a[contains( text(),'${title}')]</td>
+	<td>${title}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[contains( text(),'${title}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=div#dlgNews div.dlgHeader div.dlgTitle</td>
+	<td>titler</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${titler}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div#dlgNews div.dlgTitle</td>
+	<td>${title}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dialogWin div.dlgCloseBtn</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
